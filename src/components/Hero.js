@@ -20,6 +20,7 @@ const Hero = () => {
 }
 
 const HeroStyle = styled.header`
+  height: 50vh;
   width: 100vw;
   position: relative;
 

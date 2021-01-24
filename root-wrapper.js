@@ -124,6 +124,7 @@ p {
   }
 }
 
+
 `
 
 export const wrapPageElement = ({ element, props }) => {
