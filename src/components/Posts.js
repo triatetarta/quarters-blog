@@ -5,7 +5,7 @@ import Title from "./Title"
 import Banner from "./Banner"
 import Post from "./Post"
 
-const Posts = ({ posts: data, page, title }) => {
+const Posts = ({ posts: data, page, title, photos }) => {
   const [posts, setPosts] = useState(data)
 
   return (
@@ -38,7 +38,7 @@ const Posts = ({ posts: data, page, title }) => {
             )}
           </article>
           <article>
-            <Banner />
+            <Banner photos={photos} />
           </article>
         </div>
       </PostSection>

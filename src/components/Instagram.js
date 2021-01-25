@@ -2,41 +2,21 @@ import React from "react"
 import TitleB from "./TitleB"
 import Image from "gatsby-image"
 import styled from "styled-components"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { Link } from "gatsby"
 
-const query = graphql`
-  {
-    allInstaNode(limit: 6) {
-      nodes {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-const Instagram = () => {
-  const data = useStaticQuery(query)
-
-  const {
-    allInstaNode: { nodes },
-  } = data
-
+const Instagram = ({ photos }) => {
   return (
     <Wrapper>
       <TitleB title="instagram" />
       <div className="images">
-        {nodes.map((item, index) => {
+        {photos.map((photo, index) => {
           const {
             localFile: {
               childImageSharp: { fluid },
             },
-          } = item
+          } = photo
+          console.log(fluid)
+
           return (
             <Link
               to="https://www.instagram.com/threequartersdev/"

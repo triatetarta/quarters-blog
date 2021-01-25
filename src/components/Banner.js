@@ -4,11 +4,12 @@ import About from "./About"
 import Instagram from "./Instagram"
 import Recent from "./Recent"
 import BannerCategories from "./BannerCategories"
-const Banner = () => {
+
+const Banner = ({ photos }) => {
   return (
     <Wrapper>
       <About />
-      <Instagram />
+      <Instagram photos={photos} />
       <Recent />
       <BannerCategories />
     </Wrapper>
