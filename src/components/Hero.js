@@ -53,6 +53,7 @@ const HeroStyle = styled.header`
   }
 
   @media screen and (max-width: 800px) {
+    height: 20vh;
     .image-container {
       display: none;
     }

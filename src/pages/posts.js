@@ -1,24 +1,25 @@
 import React from "react"
-import SEO from "../components/seo"
 import { Hero, Posts } from "../components"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
-const IndexPage = ({ data }) => {
+const PostsPage = ({ data }) => {
   const {
     allContentfulBlog: { nodes: posts },
   } = data
+
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Posts" />
       <Hero />
-      <Posts posts={posts} />
+      <Posts posts={posts} title="All Posts" page />
     </>
   )
 }
 
 export const query = graphql`
   {
-    allContentfulBlog(sort: { order: DESC, fields: date }, limit: 3) {
+    allContentfulBlog(sort: { order: DESC, fields: date }) {
       nodes {
         date(formatString: "MMMM Do, YYYY")
         id
@@ -39,4 +40,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default PostsPage

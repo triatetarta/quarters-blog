@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import Image from "gatsby-image"
 import Title from "./Title"
-import { IoMdArrowRoundForward } from "react-icons/io"
-import { FaRegClock } from "react-icons/fa"
 import Banner from "./Banner"
+import Post from "./Post"
 
 const Posts = ({ posts: data, page, title }) => {
   const [posts, setPosts] = useState(data)
@@ -19,40 +17,30 @@ const Posts = ({ posts: data, page, title }) => {
       <PostSection className="posts">
         <Title title={title || "Latest Posts"} />
 
-        <div className="section-center">
-          {posts.map(post => {
-            const { id, date, image, tag, title, description } = post
-
-            return (
-              <Wrapper key={id}>
-                <div className="img">
-                  <Image fluid={image.fluid} />
-                </div>
-                <div className="info">
-                  <div className="hide">
-                    <span className="category">{tag}</span>
-                  </div>
-                  <div className="hide">
-                    <h3>{title}</h3>
-                  </div>
-                  <div className="underline"></div>
-                  <div className="description">
-                    <p>{description}</p>
-                  </div>
-                  <Link to="/" className="link">
-                    Continue Reading... <IoMdArrowRoundForward />
+        <div className="posts-center">
+          <article>
+            {posts.map(post => {
+              return <Post page={page} key={post.id} {...post} />
+            })}
+            {!page && (
+              <ButtonDiv>
+                <button>
+                  <Link to="/posts" className="btn">
+                    All Posts
                   </Link>
-                  <footer>
-                    <span className="date">
-                      <FaRegClock className="icon" />
-                      {date}
-                    </span>
-                    <span>22 min read</span>
-                  </footer>
-                </div>
-              </Wrapper>
-            )
-          })}
+                </button>
+              </ButtonDiv>
+            )}
+            {page && (
+              <ButtonDiv>
+                <button>
+                  <Link to="/" className="btn">
+                    Back Home
+                  </Link>
+                </button>
+              </ButtonDiv>
+            )}
+          </article>
           <article>
             <Banner />
           </article>
@@ -62,20 +50,34 @@ const Posts = ({ posts: data, page, title }) => {
   )
 }
 
-const PostSection = styled.section`
-  .posts {
-    width: 85vw;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    margin-bottom: 4rem;
-  }
-  .posts-title {
-    font-weight: 700;
+const ButtonDiv = styled.div`
+  text-align: center;
+  margin-bottom: 5rem;
+  button {
     text-transform: uppercase;
-    color: #e12d39;
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: var(--radius);
+    background: var(--clr-primary-5);
+    padding: 0.9rem 0.75rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.875rem;
+      padding: 0.9rem 0.75rem;
+    }
   }
+  button:hover {
+    background: var(--clr-primary-6);
+  }
+`
+
+const PostSection = styled.section`
+  width: 85vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-bottom: 4rem;
 
   @media screen and (min-width: 992px) {
     .posts {
@@ -88,15 +90,6 @@ const PostSection = styled.section`
       grid-template-columns: 1fr 250px;
       column-gap: 1rem;
     }
-  }
-`
-
-const Wrapper = styled.article`
-  margin-bottom: 3rem;
-
-  .img {
-    margin-bottom: 1rem;
-    height: 17rem;
   }
 `
 

@@ -1,0 +1,4 @@
+...GatsbyContentfulFluid
+...GatsbyContentfulFixed
+...GatsbyImageSharpFixed
+...GatsbyImageSharpFluid

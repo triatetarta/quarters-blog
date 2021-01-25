@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import logo from "../images/main-logo.svg"
 import Links from "../constants/links"
 import SocialLinks from "../constants/socialLinks"
 import { FaBars } from "react-icons/fa"
 import styled from "styled-components"
+import { GatsbyContext } from "../context/context"
 
 const Nav = () => {
+  const { toggle } = useContext(GatsbyContext)
+
   return (
     <NavBar>
       <div className="nav-center">
@@ -14,7 +17,7 @@ const Nav = () => {
           <Link to="/" className="nav-logo">
             <img src={logo} alt="quarters blog logo" />
           </Link>
-          <button className="toggle-btn">
+          <button className="toggle-btn" onClick={toggle}>
             <FaBars />
           </button>
         </div>
@@ -57,6 +60,7 @@ const NavBar = styled.nav`
     align-items: center;
     justify-content: center;
   }
+
   .page-link {
     margin-right: 2.5rem;
     color: var(--clr-black);
@@ -66,7 +70,14 @@ const NavBar = styled.nav`
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     font-family: var(--ff-secondary);
+    border-radius: var(--radius);
   }
+
+  .page-link:hover {
+    background: var(--clr-primary-5);
+    color: var(--clr-primary-10);
+  }
+
   .nav-icons {
     display: flex;
     justify-content: space-between;
@@ -77,8 +88,13 @@ const NavBar = styled.nav`
     color: var(--clr-primary-5);
   }
 
+  .nav-icons .social-icon:hover {
+    color: var(--clr-primary-6);
+  }
+
   @media screen and (max-width: 800px) {
     background: #f1f0ff;
+
     .toggle-btn {
       font-size: 2rem;
       background: transparent;
@@ -98,6 +114,10 @@ const NavBar = styled.nav`
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 30px;
     }
 
     .nav-links {

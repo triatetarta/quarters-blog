@@ -3,18 +3,18 @@ import React, { createContext, useState } from "react"
 const GatsbyContext = createContext()
 
 const GatsbyProvider = ({ children }) => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const showSidebar = () => {
-    setIsMobileOpen(true)
+  const toggle = () => {
+    setIsOpen(!isOpen)
   }
 
-  const hideSidebar = () => {
-    setIsMobileOpen(false)
+  const closeSidebar = () => {
+    setIsOpen(false)
   }
 
   return (
-    <GatsbyContext.Provider value={{ isMobileOpen, showSidebar, hideSidebar }}>
+    <GatsbyContext.Provider value={{ isOpen, toggle, setIsOpen, closeSidebar }}>
       {children}
     </GatsbyContext.Provider>
   )

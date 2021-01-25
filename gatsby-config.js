@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Quarters Blog`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -37,6 +37,12 @@ module.exports = {
       options: {
         spaceId: `1b2a5woyf2g2`,
         accessToken: process.env.ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `36754852311`,
       },
     },
     {

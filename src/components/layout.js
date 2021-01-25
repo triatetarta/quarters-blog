@@ -1,10 +1,11 @@
 import React from "react"
-import { Footer, Nav } from "."
+import { Footer, Nav, Sidebar } from "."
 
 const Layout = ({ children }) => {
   return (
     <>
       <Nav />
+      <Sidebar />
       {children}
       <Footer />
     </>
