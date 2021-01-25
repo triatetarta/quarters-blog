@@ -1,8 +1,8 @@
 import React from "react"
-import SocialLinks from "../../constants/socialLinks"
+import SocialLinks from "../constants/socialLinks"
 import Image from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
-import Title from "./Title"
+import TitleB from "./TitleB"
 import styled from "styled-components"
 
 const query = graphql`
@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <Wrapper>
-      <Title title="about me" />
+      <TitleB title="about me" />
       <Image fixed={data.person.childImageSharp.fixed} className="img" />
       <p>
         Hey there, I'm Dimitris, aka Three Quarters, a London based Web

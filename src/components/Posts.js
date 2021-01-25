@@ -8,10 +8,6 @@ import Post from "./Post"
 const Posts = ({ posts: data, page, title }) => {
   const [posts, setPosts] = useState(data)
 
-  const setBackToAll = () => {
-    setPosts(data)
-  }
-
   return (
     <>
       <PostSection className="posts">

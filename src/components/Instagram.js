@@ -1,5 +1,5 @@
 import React from "react"
-import Title from "./Title"
+import TitleB from "./TitleB"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
@@ -29,7 +29,7 @@ const Instagram = () => {
 
   return (
     <Wrapper>
-      <Title title="instagram" />
+      <TitleB title="instagram" />
       <div className="images">
         {nodes.map((item, index) => {
           const {

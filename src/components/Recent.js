@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Image from "gatsby-image"
-import Title from "./Title"
+import TitleB from "./TitleB"
 
 const query = graphql`
   {
@@ -30,7 +30,7 @@ const Recent = () => {
 
   return (
     <Wrapper>
-      <Title title="recent" />
+      <TitleB title="recent" />
       {posts.map(post => {
         const {
           date,

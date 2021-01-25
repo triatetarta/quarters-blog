@@ -1,12 +1,12 @@
 import React from "react"
-import Categories from "../Categories"
-import Title from "./Title"
+import Categories from "./Categories"
+import TitleB from "./TitleB"
 import styled from "styled-components"
 
 const BannerCategories = () => {
   return (
     <Wrapper>
-      <Title title="categories" />
+      <TitleB title="categories" />
       <Categories />
     </Wrapper>
   )
