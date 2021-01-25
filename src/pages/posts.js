@@ -6,14 +6,13 @@ import { graphql } from "gatsby"
 const PostsPage = ({ data }) => {
   const {
     allContentfulBlog: { nodes: posts },
-    allInstaNode: { nodes: photos },
   } = data
 
   return (
     <>
       <SEO title="Posts" />
       <Hero />
-      <Posts posts={posts} photos={photos} title="All Posts" page />
+      <Posts posts={posts} title="All Posts" page />
     </>
   )
 }
@@ -34,17 +33,6 @@ export const query = graphql`
         image {
           fluid {
             ...GatsbyContentfulFluid
-          }
-        }
-      }
-    }
-    allInstaNode(limit: 6) {
-      nodes {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
           }
         }
       }

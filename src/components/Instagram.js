@@ -2,9 +2,14 @@ import React from "react"
 import TitleB from "./TitleB"
 import Image from "gatsby-image"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
-const Instagram = ({ photos }) => {
+const Instagram = () => {
+  const data = useStaticQuery(query)
+
+  const {
+    allInstaNode: { nodes: photos },
+  } = data
   return (
     <Wrapper>
       <TitleB title="instagram" />
@@ -15,7 +20,6 @@ const Instagram = ({ photos }) => {
               childImageSharp: { fluid },
             },
           } = photo
-          console.log(fluid)
 
           return (
             <Link
@@ -30,6 +34,22 @@ const Instagram = ({ photos }) => {
     </Wrapper>
   )
 }
+
+const query = graphql`
+  {
+    allInstaNode(limit: 6) {
+      nodes {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const Wrapper = styled.article`
   padding-bottom: 2rem;
