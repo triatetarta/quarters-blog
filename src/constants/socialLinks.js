@@ -5,7 +5,7 @@ import {
   FaInstagramSquare,
 } from "react-icons/fa"
 
-const socialLinks = ({ styleClass }) => {
+const SocialLinks = ({ styleClass }) => {
   return (
     <ul className={styleClass}>
       <li>
@@ -27,4 +27,4 @@ const socialLinks = ({ styleClass }) => {
   )
 }
 
-export default socialLinks
+export default SocialLinks

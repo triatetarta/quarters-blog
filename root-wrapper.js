@@ -1,4 +1,4 @@
-import React from "React"
+import React from "react"
 import { createGlobalStyle } from "styled-components"
 import Layout from "./src/components/layout"
 import { GatsbyProvider } from "./src/context/context"
