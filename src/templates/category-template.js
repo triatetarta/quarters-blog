@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Hero, Posts } from "../components"
+import Hero from "../components/Hero"
+import Posts from "../components/Posts"
 import SEO from "../components/seo"
 
 const categoryTemplate = props => {

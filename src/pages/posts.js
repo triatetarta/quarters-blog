@@ -1,5 +1,6 @@
 import React from "react"
-import { Hero, Posts } from "../components"
+import Hero from "../components/Hero"
+import Posts from "../components/Posts"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 

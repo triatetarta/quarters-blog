@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
-import { Hero, Posts } from "../components"
+import Hero from "../components/Hero"
+import Posts from "../components/Posts"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
