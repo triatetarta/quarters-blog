@@ -5,6 +5,7 @@ import Job from "../components/Job"
 import JobsPagination from "../components/JobsPagination"
 import SearchForm from "../components/SearchForm"
 import SEO from "../components/seo"
+import Spinner from "../components/Spinner"
 
 const Jobs = () => {
   const [params, setParams] = useState({})
@@ -31,7 +32,7 @@ const Jobs = () => {
           setPage={setPage}
           hasNextPage={hasNextPage}
         />
-        {loading && <h1>Loading...</h1>}
+        {loading && <Spinner />}
         {error && <h1>Error. Try Refreshing...</h1>}
         {jobs.map(job => {
           return <Job key={job.id} job={job} />
