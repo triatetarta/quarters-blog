@@ -40,12 +40,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `36754852311`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {

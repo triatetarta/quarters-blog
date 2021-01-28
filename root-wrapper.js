@@ -188,6 +188,42 @@ Sidebar
   cursor: pointer;
 }
 
+
+.pagination {
+  display: flex;
+ align-items:center;
+}
+
+.page-item {
+  border-radius: 10px;
+  margin-right: 0.5rem;
+  a{
+    text-decoration: none;
+    padding: .5rem .8rem;
+    border-radius: 10px;
+    background: var(--clr-white);
+    color: var(--clr-primary-5);
+    span{
+      border-radius: 10px;
+      background: var(--clr-white);
+      color: var(--clr-primary-5);
+    }
+    .sr-only{
+      display: none;
+    }
+  }
+}
+
+.page-item.active{
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  padding: .5rem .8rem;
+  
+  .sr-only{
+    display: none;
+  }
+}
+
 `
 
 export const wrapPageElement = ({ element, props }) => {

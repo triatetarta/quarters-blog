@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import About from "./About"
-import Instagram from "./Instagram"
 import Recent from "./Recent"
 import BannerCategories from "./BannerCategories"
+import BannerJob from "./BannerJob"
 
-const Banner = ({ photos }) => {
+const Banner = () => {
   return (
     <Wrapper>
+      <BannerJob />
       <About />
-      <Instagram photos={photos} />
       <Recent />
       <BannerCategories />
     </Wrapper>
