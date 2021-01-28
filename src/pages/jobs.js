@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Job from "../components/Job"
 import JobsPagination from "../components/JobsPagination"
 import SearchForm from "../components/SearchForm"
+import SEO from "../components/seo"
 
 const Jobs = () => {
   const [params, setParams] = useState({})
@@ -21,6 +22,7 @@ const Jobs = () => {
 
   return (
     <SectWrap>
+      <SEO title="Find A Job" />
       <Wrapper>
         <h2>Looking for a Job?</h2>
         <SearchForm params={params} onParamChange={handleParamChange} />
