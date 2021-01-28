@@ -49,6 +49,7 @@ const Jobs = () => {
 
 const SectWrap = styled.section`
   padding-top: 5rem;
+  padding-bottom: 3rem;
   background: #f1f0ff;
 
   @media screen and (max-width: 800px) {
@@ -61,6 +62,7 @@ const Wrapper = styled.div`
   max-width: var(--max-width);
   margin: 0 auto;
   h2 {
+    font-weight: lighter;
     text-align: center;
     padding-bottom: 3rem;
   }

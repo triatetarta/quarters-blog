@@ -191,7 +191,8 @@ Sidebar
 
 .pagination {
   display: flex;
- align-items:center;
+  align-items:center;
+ 
 }
 
 .page-item {

@@ -60,6 +60,7 @@ const FormStyle = styled.form`
     font-size: 0.9rem;
     border: 1px solid var(--clr-grey-5);
     outline: none;
+    padding-left: 0.5rem;
 
     &:focus {
       border: 1px solid var(--clr-primary-5);
