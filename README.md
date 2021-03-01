@@ -1,6 +1,6 @@
 # Quarters Blog
 
-A Gatsby website for **Quarters Blog**.
+A Gatsby website for tech **Quarters Blog**.
 It includes:
 
 - Gatsby
